@@ -1,7 +1,6 @@
 @extends('main.main')
 
 @section('content')
-    <!-- End Header -->
 
     <div class="p-6 space-y-6">
 
@@ -57,18 +56,14 @@
             </div>
 
 
-
-
-
-
-
             <div class="p-5 border-t border-dashed border-default-200">
 
-            
+                <form id="addShopForm" action="{{ route('ShopDetails.store') }}" method="POST">
+                    @csrf
+                    {{-- enctype="multipart/form-data" --}}
                     <div id="tabBusinessDetail" role="tabpanel" class="">
-                        <form id="addShopForm" action="{{ route('shops.store') }}" method="POST">
-                            @csrf
-        
+ 
+
                         <h4 class="text-lg font-medium text-default-900 mb-6">Step 1:</h4>
 
                         <div class="grid lg:grid-cols-2 gap-6 mb-6">
@@ -154,7 +149,7 @@
                             </div>
                         </div>
 
-                        <div class="flex justify-end gap-4">
+                        {{-- <div class="flex justify-end gap-4">
                             <button type="reset"
                                 class="flex items-center justify-center gap-2 rounded-md bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-white">
                                 <i class="ti ti-arrow-back-up text-lg"></i>
@@ -165,89 +160,88 @@
                                 <i class="ti ti-device-floppy text-lg"></i>
                                 Save
                             </button>
-                        </div>
-                    </form>
+                        </div> --}}
+
                     </div>
-                
 
 
 
 
 
 
-                <div id="tabPersonalDetail" class="hidden" role="tabpanel">
-                    <h4 class="text-lg font-medium text-default-900 mb-6">Step 2:</h4>
 
-                    <form id="businessDetailForm" action="{{ route('business-details.store') }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <div class="grid lg:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="companyName">Company
-                                    Name</label>
-                                <input id="companyName" name="company_name"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Company Name" required>
+                    <div id="tabPersonalDetail" class="" role="tabpanel">
+                        <h4 class="text-lg font-medium text-default-900 mb-6">Step 2:</h4>
+                            <div class="grid lg:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="companyName">Company
+                                        Name</label>
+                                    <input id="companyName" name="company_name"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Company Name" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="companyType">Company
+                                        Type</label>
+                                    <input id="companyType" name="company_type"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Company Type" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2" for="panCardNumber">PAN
+                                        Card Number</label>
+                                    <input id="panCardNumber" name="pan_card_number"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter PAN Card Number" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2" for="faxNumber">Fax
+                                        Number</label>
+                                    <input id="faxNumber" name="fax_number"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Fax Number">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="website">Website</label>
+                                    <input id="website" name="website"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter website.com">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="email">Email</label>
+                                    <input id="email" name="email"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="email" placeholder="Enter Email" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="companyNumber">Number</label>
+                                    <input id="companyNumber" name="number"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Your Number">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="companyLogo">Company
+                                        Logo</label>
+                                    <input type="file" name="company_logo" id="file-input"
+                                        class="block w-full rounded-md text-default-800 text-sm focus:ring-transparent border border-default-200 dark:bg-default-50 file:border-0 file:bg-default-100 file:me-4 file:py-2.5 file:px-4"
+                                        placeholder="Upload Your Company Logo">
+                                </div>
                             </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="companyType">Company
-                                    Type</label>
-                                <input id="companyType" name="company_type"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Company Type" required>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="panCardNumber">PAN
-                                    Card Number</label>
-                                <input id="panCardNumber" name="pan_card_number"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter PAN Card Number" required>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="faxNumber">Fax
-                                    Number</label>
-                                <input id="faxNumber" name="fax_number"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Fax Number">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2"
-                                    for="website">Website</label>
-                                <input id="website" name="website"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter website.com">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2"
-                                    for="email">Email</label>
-                                <input id="email" name="email"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="email" placeholder="Enter Email" required>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2"
-                                    for="companyNumber">Number</label>
-                                <input id="companyNumber" name="number"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Your Number">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="companyLogo">Company
-                                    Logo</label>
-                                <input type="file" name="company_logo" id="file-input"
-                                    class="block w-full rounded-md text-default-800 text-sm focus:ring-transparent border border-default-200 dark:bg-default-50 file:border-0 file:bg-default-100 file:me-4 file:py-2.5 file:px-4"
-                                    placeholder="Upload Your Company Logo">
-                            </div>
-                        </div>
-
-                        <div class="flex justify-end gap-4">
+                            {{-- <div class="flex justify-end gap-4">
                             <button type="reset"
                                 class="flex items-center justify-center gap-2 rounded-md bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-white">
                                 <i class="ti ti-arrow-back-up text-lg"></i> Undo
@@ -256,73 +250,71 @@
                                 class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500">
                                 <i class="ti ti-device-floppy text-lg"></i> Save
                             </button>
-                        </div>
-                    </form>
-                </div>
+                        </div> --}}
+                    </div>
 
 
-                <div id="tabBankDetail" role="tabpanel" class="hidden">
-                    <h4 class="text-lg font-medium text-default-900 mb-6">Step 3:</h4>
+                    <div id="tabBankDetail" role="tabpanel" class="">
+                        <h4 class="text-lg font-medium text-default-900 mb-6">Step 3:</h4>
+                            <div class="grid lg:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2" for="bankName">Bank
+                                        Name</label>
+                                    <input id="bankName" name="bank_name" value="{{ old('bank_name') }}"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Your Bank Name" required>
+                                </div>
 
-                    <form action="{{ route('bankDetails.store') }}" method="POST">
-                        @csrf
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="bankBranch">Branch</label>
+                                    <input id="bankBranch" name="branch" value="{{ old('branch') }}"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Your Branch" required>
+                                </div>
 
-                        <div class="grid lg:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="bankName">Bank
-                                    Name</label>
-                                <input id="bankName" name="bank_name" value="{{ old('bank_name') }}"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Your Bank Name" required>
+                                <div class="lg:col-span-2">
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="accountHolderName">Account Holder Name</label>
+                                    <input id="accountHolderName" name="account_holder_name"
+                                        value="{{ old('account_holder_name') }}"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Your Account Holder Name" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2"
+                                        for="accountNumber">Account
+                                        Number</label>
+                                    <input id="accountNumber" name="account_number" value="{{ old('account_number') }}"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter Your Account Number" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-default-900 mb-2" for="IFSCCode">IFSC
+                                        Code</label>
+                                    <input id="IFSCCode" name="ifsc_code" value="{{ old('ifsc_code') }}"
+                                        class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
+                                        type="text" placeholder="Enter IFSC Code">
+                                </div>
                             </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2"
-                                    for="bankBranch">Branch</label>
-                                <input id="bankBranch" name="branch" value="{{ old('branch') }}"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Your Branch" required>
+                            <div class="flex justify-end gap-4">
+                                <button type="reset"
+                                    class="flex items-center justify-center gap-2 rounded-md bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-white">
+                                    <i class="ti ti-arrow-back-up text-lg"></i> Undo
+                                </button>
+                                <button type="submit"
+                                    class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500">
+                                    <i class="ti ti-device-floppy text-lg"></i> Save
+                                </button>
                             </div>
 
-                            <div class="lg:col-span-2">
-                                <label class="block text-sm font-medium text-default-900 mb-2"
-                                    for="accountHolderName">Account Holder Name</label>
-                                <input id="accountHolderName" name="account_holder_name"
-                                    value="{{ old('account_holder_name') }}"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Your Account Holder Name" required>
-                            </div>
+                    </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="accountNumber">Account
-                                    Number</label>
-                                <input id="accountNumber" name="account_number" value="{{ old('account_number') }}"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter Your Account Number" required>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-default-900 mb-2" for="IFSCCode">IFSC
-                                    Code</label>
-                                <input id="IFSCCode" name="ifsc_code" value="{{ old('ifsc_code') }}"
-                                    class="block w-full rounded-md py-2.5 px-4 text-default-800 text-sm focus:ring-transparent border-default-200 dark:bg-default-50"
-                                    type="text" placeholder="Enter IFSC Code">
-                            </div>
-                        </div>
-
-                        <div class="flex justify-end gap-4">
-                            <button type="reset"
-                                class="flex items-center justify-center gap-2 rounded-md bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-white">
-                                <i class="ti ti-arrow-back-up text-lg"></i> Undo
-                            </button>
-                            <button type="submit"
-                                class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500">
-                                <i class="ti ti-device-floppy text-lg"></i> Save
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
+                    <input type="submit" name="" id="">
+                </form>
 
             </div>
         </div>
