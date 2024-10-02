@@ -101,7 +101,7 @@ class ShopDetailsController extends Controller
     {
 
         $shopDetail = ShopDetails::findOrFail($id);
-        return view('shop_details.show', compact('shopDetail'));
+        return view('shops.shopdetails', compact('shopDetail'));
     }
 
 

@@ -301,19 +301,19 @@
                             </div>
 
                             <div class="flex justify-end gap-4">
-                                <button type="reset"
+                                {{-- <button type="reset"
                                     class="flex items-center justify-center gap-2 rounded-md bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-white">
                                     <i class="ti ti-arrow-back-up text-lg"></i> Undo
-                                </button>
-                                <button type="submit"
+                                </button> --}}
+                                {{-- <button type="submit"
                                     class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500">
                                     <i class="ti ti-device-floppy text-lg"></i> Save
-                                </button>
+                                </button> --}}
                             </div>
 
                     </div>
 
-                    <input type="submit" name="" id="">
+                    <input type="submit" value="register"  class="flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500">
                 </form>
 
             </div>

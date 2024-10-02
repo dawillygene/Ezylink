@@ -76,7 +76,7 @@
                         </div>
                     </div>
 
-                    <a href="admin-shops-detail.html"
+                    <a href="{{ route('ShopDetails.show', $shop->id) }}"
                         class="px-6 py-4 block bg-primary/10 text-center text-primary font-semibold transition-all duration-500 hover:bg-primary hover:text-white">
                         View Details
                     </a>

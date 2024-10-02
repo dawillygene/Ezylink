@@ -9,9 +9,9 @@ Route::get('/', function () {
     return view('main.main');
 });
 
-Route::get('/shopdetails', function () {
-    return view('shops.shopdetails');
-});
+// Route::get('/shopdetails', function () {
+//     return view('shops.shopdetails');
+// });
 
 Route::get('/addshop', function () {
     return view('shops.addshop');
