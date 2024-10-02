@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-    <!-- End Header -->
     <div class="p-6 space-y-6">
 
         <div class="flex w-full items-center justify-between print:hidden">
@@ -42,11 +40,11 @@
                     </div>
                     <div class="flex justify-between gap-6">
                       <div class="">
-                        <h6 class="text-lg font-semibold text-default-950 mb-0.5">Healthy Feast Corner</h6>
+                        <h6 class="text-lg font-semibold text-default-950 mb-0.5">{{ $shopDetail->company_name }}</h6>
                         <p class="text-sm text-default-600">Since 2013</p>
                       </div>
                       <div class="flex items-center gap-2">
-                        <button type="button" class="py-2 px-4 inline-flex items-center justify-center text-xs font-medium rounded bg-default-200 transition-all duration-300 hover:bg-default-300 text-default-900"><i class="ti ti-edit-circle text-sm/none me-1"></i> Edit</a>
+                        <a type="button" href="{{ route('ShopDetails.edit',$shopDetail->id) }}" class="py-2 px-4 inline-flex items-center justify-center text-xs font-medium rounded bg-default-200 transition-all duration-300 hover:bg-default-300 text-default-900"><i class="ti ti-edit-circle text-sm/none me-1"></i> Edit</a>
                           <button type="button" class="py-2 px-4 inline-flex items-center justify-center text-xs font-medium rounded bg-red-500 text-white transition-all duration-300 hover:bg-red-600"><i class="ti ti-trash text-sm/none me-1"></i> Delete</button>
                       </div>
                     </div>
@@ -61,17 +59,17 @@
                 </div>
   
                 <div class="p-5 border-t border-dashed border-default-200">
-                  <p class="text-default-600 mb-3"><strong>Owner Name: :</strong> <span class="ms-2">Kianna Vetrovs</span></p>
+                  <p class="text-default-600 mb-3"><strong>Owner Name: :</strong> <span class="ms-2">{{ $shopDetail->first_name }} {{ $shopDetail->last_name }}</span></p>
   
                   <p class="text-default-600 mb-3"><strong>Company Type: :</strong> <span class="ms-2">LLP</span></p>
   
-                  <p class="text-default-600 mb-3"><strong>Email :</strong><span class="ms-2">kianna.vetrov@mail.com</span></p>
+                  <p class="text-default-600 mb-3"><strong>Email :</strong><span class="ms-2">{{ $shopDetail->email }}</span></p>
   
-                  <p class="text-default-600 mb-3"><strong>Contact No :</strong> <span class="ms-2 ">+(123) 456 7890</span></p>
+                  <p class="text-default-600 mb-3"><strong>Contact No :</strong> <span class="ms-2 ">{{ $shopDetail->contact_number }}</span></p>
   
-                  <p class="text-default-600 mb-3"><strong>Fax :</strong> <span class="ms-2 ">+1 453 345 3424</span></p>
+                  <p class="text-default-600 mb-3"><strong>Fax :</strong> <span class="ms-2 ">{{ $shopDetail->fax_number}}</span></p>
   
-                  <p class="text-default-600"><strong>Location :</strong> <span class="ms-2">Canada</span></p>
+                  <p class="text-default-600"><strong>Location :</strong> <span class="ms-2">{{ $shopDetail->country}},{{ $shopDetail->city}}</span></p>
                 </div>
               </div>
   

@@ -106,9 +106,10 @@ class ShopDetailsController extends Controller
 
 
 
-    public function edit(ShopDetails $shopDetails)
+    public function edit($id)
     {
-        //
+        $shopDetail = ShopDetails::findOrFail($id);
+        return view('shops.editshop',data: compact(var_name: 'shopDetail'));
     }
 
     /**
