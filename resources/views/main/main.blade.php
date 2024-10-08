@@ -32,8 +32,19 @@
       });      
   </script>
 @endif
-
-
+@if (session('error'))
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '{{ session('error') }}',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    });      
+</script>
+@endif
 
   <!-- Start Sidebar -->
   <div id="application-sidebar" class="hs-overlay fixed inset-y-0 start-0 z-60 hidden w-64 -translate-x-full transform overflow-y-auto border-e border-default-200 bg-white transition-all duration-300 hs-overlay-open:translate-x-0 dark:bg-default-50 lg:bottom-0 lg:end-auto lg:z-30 lg:block lg:translate-x-0 rtl:translate-x-full rtl:hs-overlay-open:translate-x-0 rtl:lg:translate-x-0 print:hidden">
@@ -181,7 +192,7 @@
           <div id="menuShops" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
             <ul class="mt-2 flex flex-col gap-2">
               <li class="menu-item">
-                <a href="admin-shops-list.html" class="flex items-center gap-x-3.5 rounded-full px-5 py-2 text-sm font-medium text-default-700 hover:bg-default-100">
+                <a href="/ShopDetails" class="flex items-center gap-x-3.5 rounded-full px-5 py-2 text-sm font-medium text-default-700 hover:bg-default-100">
                   <i class="ti ti-circle-filled scale-[.25] text-lg"></i>
                   Shops List
                 </a>

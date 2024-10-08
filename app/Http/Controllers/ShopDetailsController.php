@@ -60,9 +60,9 @@ class ShopDetailsController extends Controller
         ]);
 
         // dd($validated);
-        if ($request->hasFile('company_logo')) {
-            $logoPath = $request->file('company_logo')->store('logos', 'public');
-        }
+        // if ($request->hasFile('company_logo')) {
+        //     $logoPath = $request->file('company_logo')->store('logos', 'public');
+        // }
 
 
         ShopDetails::create([

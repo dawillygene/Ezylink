@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ShopDetailsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ShopDetailsController;
 
 
 
@@ -18,6 +19,8 @@ Route::get('/addshop', function () {
 });
 
 Route::resource('ShopDetails', ShopDetailsController::class);
+
+Route::resource('customers', CustomerController::class);
 
 
 
