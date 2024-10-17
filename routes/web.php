@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ShopDetailsController;
 
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
@@ -22,8 +23,7 @@ Route::resource('ShopDetails', ShopDetailsController::class);
 
 Route::resource('customers', CustomerController::class);
 
-
-
+Route::resource('products', ProductController::class);
 
 
 
