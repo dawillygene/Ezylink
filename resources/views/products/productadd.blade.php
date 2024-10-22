@@ -1,5 +1,12 @@
 @extends('main.main')
 @section('content')
+{{-- 
+<script type="module" crossorigin src="https://coderthemes.com/greencart/assets/theme-9c065fc6.js"></script>
+<script type="module" crossorigin src="https://coderthemes.com/greencart/assets/dropzone-f13a1568.js"></script>
+<script type="module" crossorigin src="https://coderthemes.com/greencart/assets/quill-1f5a4f93.js"></script>
+<script type="module" crossorigin src="https://coderthemes.com/greencart/assets/index-a4e39586.js"></script>
+<script type="module" crossorigin src="https://coderthemes.com/greencart/assets/admin-product-add-b13b6e26.js"></script>
+<link rel="stylesheet" href="https://coderthemes.com/greencart/assets/theme-ecf0ae99.css"> --}}
 
 <div class="p-6 space-y-6">
 
@@ -263,4 +270,6 @@
         </div>
       </div>
     </div>
+
+    
 @endsection
