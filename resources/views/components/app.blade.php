@@ -949,7 +949,7 @@
     <!-- End Header -->
 
 
-   @yield('content')
+ {{ $slot}}
 
 
 

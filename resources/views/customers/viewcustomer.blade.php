@@ -1,5 +1,4 @@
-@extends('main.main')
-@section('content')
+<x-app>
     <div class="p-6 space-y-6">
 
         <div class="flex w-full items-center justify-between print:hidden">
@@ -334,15 +333,16 @@
                             <td class="px-6 py-4">
                               <span class="px-3 py-1 text-xs font-medium rounded-md bg-green-500/20 text-green-500">Paid</span>
                             </td>
-                          </tr><!-- end table-row -->
-                        </tbody><!-- end t-body -->
-                      </table><!-- end table -->
-                    </div><!-- end overflow-hidden -->
-                  </div><!-- end table-responsive -->
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-@endsection
+
+    </x-app>

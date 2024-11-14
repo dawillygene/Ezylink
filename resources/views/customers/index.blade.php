@@ -1,6 +1,4 @@
-@extends('main.main')
-@section('content')
-
+<x-app>
 
 
     <!-- End Header -->
@@ -220,4 +218,4 @@
 
 
 
-@endsection
+    </x-app>

@@ -1,5 +1,4 @@
-@extends('main.main')
-@section('content')
+<x-app>
 {{-- 
 <script type="module" crossorigin src="https://coderthemes.com/greencart/assets/theme-9c065fc6.js"></script>
 <script type="module" crossorigin src="https://coderthemes.com/greencart/assets/dropzone-f13a1568.js"></script>
@@ -270,6 +269,4 @@
         </div>
       </div>
     </div>
-
-    
-@endsection
+  </x-app>

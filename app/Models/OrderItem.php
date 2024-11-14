@@ -10,10 +10,10 @@ class OrderItem extends Model
     use HasFactory;
 
     protected $fillable = [
-        'order_id',      // Foreign key to the orders table
-        'product_id',    // Foreign key to the products table
-        'quantity',      // Quantity of the product in the order
-        'price',         // Price of the product at the time of the order
+        'order_id',     
+        'product_id',   
+        'quantity',      
+        'price',   
     ];
 
     // Define relationships

@@ -1,2 +1,3 @@
-@extends('main.main')
-@section('content')
+<x-app>
+
+</x-app>

@@ -1,6 +1,4 @@
-@extends('main.main')
-
-@section('content')
+<x-app>
 
     <div class="p-6 space-y-6">
 
@@ -318,4 +316,4 @@
 
             </div>
         </div>
-    @endsection
+    </x-app>
