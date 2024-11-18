@@ -6,7 +6,6 @@
 <script type="module" crossorigin src="https://coderthemes.com/greencart/assets/index-a4e39586.js"></script>
 <script type="module" crossorigin src="https://coderthemes.com/greencart/assets/admin-product-add-b13b6e26.js"></script>
 <link rel="stylesheet" href="https://coderthemes.com/greencart/assets/theme-ecf0ae99.css"> --}}
-
 <div class="p-6 space-y-6">
 
       <div class="flex w-full items-center justify-between print:hidden">
@@ -269,4 +268,9 @@
         </div>
       </div>
     </div>
+
+@stack('js')
+<script type="module" crossorigin src={{ asset('assets/js/admin-product-add-b13b6e26.js') }} defer></script>  
+@endstack
+
   </x-app>

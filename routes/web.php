@@ -8,7 +8,7 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
-    return view('main.main');
+    return view('welcome');
 });
 
 // Route::get('/shopdetails', function () {
